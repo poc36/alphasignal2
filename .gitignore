@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Environment
+.env
+.env.*
+*.env
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test artifacts
+backend/test_results.json
+.pytest_cache/
+pytest-cache-files-*/
+.run/
+backend/.chroma/
+backend/.runtime/
+backend/*.db
+backend/*.db-journal
+
+# Logs
+*.log

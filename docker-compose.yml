@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    command: python backend/main.py
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+  frontend:
+    build: .
+    command: streamlit run frontend/app.py --server.address 0.0.0.0 --server.port 8501
+    env_file:
+      - .env
+    environment:
+      ALPHASIGNAL_API_BASE: http://api:8000
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      - api
